@@ -112,6 +112,29 @@
       opacity: 0.85;
     }
 
+    /* New pricing-specific styles */
+    .pricing .card h3,
+    .pricing .card p.price {
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .testimonials .card p {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .testimonials .card strong {
+      display: block;
+      margin-top: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -127,33 +150,6 @@
       font-size: 1.25rem;
       user-select: none;
     }
-
-    /* AI Upload Section */
-    .ai-detector {
-      max-width: 700px;
-      margin: 0 auto 80px;
-      padding: 30px;
-      text-align: center;
-      background: var(--card-bg-dark);
-      border: 1px solid var(--border-color-dark);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-    .ai-detector input[type="file"] {
-      margin: 20px 0;
-    }
-    .ai-detector img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 20px 0;
-    }
-    .ai-result {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
   </style>
 </head>
 <body class="dark">
@@ -166,16 +162,61 @@
   <section class="services">
     <h2>Our Services</h2>
     <div class="cards">
-      <!-- Service Cards Here -->
+      <div class="card">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 11h14l-1.5-4.5h-11L5 11zm14.92 1.39A1 1 0 0 1 21 13v1a1 1 0 0 1-1 1h-.17a3 3 0 0 1-5.66 0H9.83a3 3 0 0 1-5.66 0H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 .08-.39l2-5A1 1 0 0 1 6 6h12a1 1 0 0 1 .92.61l2 5zM7 17a1 1 0 1 0 1-1 1 1 0 0 0-1 1zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg>
+        <h3>Basic Wash</h3>
+        <p>Exterior hand wash and dry. Quick and effective cleaning for those on the go.</p>
+      </div>
+      <div class="card">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 11h14l-1.5-4.5h-11L5 11zm14.92 1.39A1 1 0 0 1 21 13v1a1 1 0 0 1-1 1h-.17a3 3 0 0 1-5.66 0H9.83a3 3 0 0 1-5.66 0H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 .08-.39l2-5A1 1 0 0 1 6 6h12a1 1 0 0 1 .92.61l2 5zM7 17a1 1 0 1 0 1-1 1 1 0 0 0-1 1zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg>
+        <h3>Deluxe Wash</h3>
+        <p>Includes interior vacuuming, window cleaning, and exterior wash with wax finish.</p>
+      </div>
+      <div class="card">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 11h14l-1.5-4.5h-11L5 11zm14.92 1.39A1 1 0 0 1 21 13v1a1 1 0 0 1-1 1h-.17a3 3 0 0 1-5.66 0H9.83a3 3 0 0 1-5.66 0H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 .08-.39l2-5A1 1 0 0 1 6 6h12a1 1 0 0 1 .92.61l2 5zM7 17a1 1 0 1 0 1-1 1 1 0 0 0-1 1zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg>
+        <h3>Ultimate Detail</h3>
+        <p>Complete detail service including polish, tire shine, and deep interior conditioning.</p>
+      </div>
     </div>
   </section>
 
-  <section class="ai-detector">
-    <h2>🚘 AI Car Dirt & Damage Detector</h2>
-    <p>Upload a photo of your vehicle and our AI will suggest the perfect wash based on the dirt or scratches it sees.</p>
-    <input type="file" accept="image/*" onchange="handleImageUpload(event)" />
-    <div id="preview"></div>
-    <div class="ai-result" id="aiResult"></div>
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Basic Wash</h3>
+        <p class="price">$15</p>
+        <p>Exterior hand wash and dry.</p>
+      </div>
+      <div class="card">
+        <h3>Deluxe Wash</h3>
+        <p class="price">$30</p>
+        <p>Includes interior vacuuming, window cleaning, and exterior wax finish.</p>
+      </div>
+      <div class="card">
+        <h3>Ultimate Detail</h3>
+        <p class="price">$75</p>
+        <p>Complete detail package with polish, tire shine, and deep conditioning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="cards">
+      <div class="card">
+        <p>\"My car has never looked better. Super fast and friendly service! Highly recommend ShineWave.\"</p>
+        <strong>– Jake R.</strong>
+      </div>
+      <div class="card">
+        <p>\"The detail package is amazing. The team pays attention to every little spot!\"</p>
+        <strong>– Emily K.</strong>
+      </div>
+      <div class="card">
+        <p>\"Excellent service and friendly staff. Always leave satisfied and my car shines!\"</p>
+        <strong>– Carlos M.</strong>
+      </div>
+    </div>
   </section>
 
   <script>
@@ -183,28 +224,6 @@
       const body = document.body;
       body.classList.toggle('light');
       body.classList.toggle('dark');
-    }
-
-    function handleImageUpload(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        const preview = document.getElementById('preview');
-        preview.innerHTML = '';
-        preview.appendChild(img);
-
-        // Simulated AI logic (replace this with real model call)
-        const suggestions = [
-          "✅ Your car looks clean. A Basic Wash should do!",
-          "⚠️ Moderate dirt detected near rear bumper. We recommend the Deluxe Wash.",
-          "❗ Heavy dirt and potential scratches found. Go for the Ultimate Detail Package!"
-        ];
-        const random = suggestions[Math.floor(Math.random() * suggestions.length)];
-        document.getElementById('aiResult').innerText = random;
-      }
-      if (file) reader.readAsDataURL(file);
     }
   </script>
 </body>
