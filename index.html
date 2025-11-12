@@ -2,229 +2,420 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SplashBros Car Wash</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SplashBros Car Wash | Mobile Detailing • Hand Wash • Interior & Exterior</title>
+  <meta name="description" content="Mobile car wash & detailing. We come to you—hand wash, interior shampoo, paint polish, and ceramic protection. Clean. Fast. Affordable. Book today." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
   <style>
-    :root {
-      --bg-dark: #0e0e10;
-      --bg-light: #ffffff;
-      --text-light: #f2f2f2;
-      --text-dark: #111;
-      --accent: #00aaff;
-      --card-bg-dark: rgba(255, 255, 255, 0.05);
-      --card-bg-light: #f9f9f9;
-      --border-color-dark: #2a2a2d;
-      --border-color-light: #ddd;
+    :root{
+      --bg:#ffffff;--text:#111827;--muted:#667085;--accent:#0ea5e9;--accent-2:#22c55e;--ink:#0b1324;
+      --card:#f8fafc;--line:#e5e7eb;--shadow:0 10px 30px rgba(2,6,23,.08);--radius:16px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Topbar like Hunters: clean, bright, clear CTAs */
+    .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand .logo{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#38bdf8);color:#fff;font-weight:800}
+    .brand span{font-weight:800;letter-spacing:.2px}
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{color:#0f172a;opacity:.9}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:10px;border:1px solid var(--line);font-weight:700;cursor:pointer;box-shadow:var(--shadow);background:#fff}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(14,165,233,.25)}
+    .btn-ghost{background:transparent;border-color:transparent;box-shadow:none}
+
+    /* Hero: light, centered, split visual */
+    .hero{background:linear-gradient(180deg,#f0f9ff,#ffffff);border-bottom:1px solid var(--line)}
+    .hero-wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:56px 0}
+    .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.02em;color:#0b1324}
+    .hero p{max-width:640px;margin-top:10px;color:var(--muted)}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;color:#0b1324}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#e0f2fe;border:1px solid #bae6fd;font-weight:700;font-size:13px}
+    .hero-media{border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-media img{width:100%;height:100%;object-fit:cover}
+
+    @media(min-width:980px){
+      .hero-wrap{grid-template-columns:1.1fr .9fr}
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
+    /* Section heads */
+    section{padding:60px 0}
+    .section-head{text-align:center;margin-bottom:28px}
+    .eyebrow{display:inline-block;font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;}
+    .section-head h2{font-size:clamp(26px,3.6vw,36px);margin-top:6px}
+    .section-head p{max-width:780px;margin:8px auto 0;color:var(--muted)}
+
+    /* Pricing grid styled like clean cards */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    @media(min-width:720px){.card.sm-6{grid-column:span 6}}
+    @media(min-width:1000px){.card.md-4{grid-column:span 4}}
+
+    .pkg{display:flex;flex-direction:column;gap:14px}
+    .pkg h3{display:flex;align-items:center;gap:8px;font-size:20px}
+    .tag{font-size:12px;font-weight:800;padding:4px 8px;border-radius:999px;background:#ecfeff;border:1px solid #a5f3fc;color:#075985}
+    .tag.green{background:#ecfdf5;border-color:#bbf7d0;color:#065f46}
+    .tag.gold{background:#fffbeb;border-color:#fde68a;color:#8a5a00}
+    .price{font-size:28px;font-weight:800;color:#0b1324}
+    .includes{list-style:none;display:grid;gap:9px;color:#0b1324}
+    .includes li{display:flex;align-items:flex-start;gap:10px}
+    .check{width:18px;height:18px;flex:0 0 18px;display:inline-grid;place-items:center;border-radius:6px;background:#e6f7ff;border:1px solid #b6e3ff;font-weight:900;color:#0369a1}
+    .pkg .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+
+    /* Compare table */
+    .compare{overflow:auto}
+    table{width:100%;border-collapse:collapse;font-size:15px}
+    th,td{padding:12px 10px;border-bottom:1px solid var(--line)}
+    th{text-align:left;font-weight:800;color:#0b1324}
+    td .no{color:#ef4444}
+    td .yes{color:#16a34a}
+
+    /* Why choose us icons */
+    .icons{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+    .icon-card{grid-column:span 12;border:1px dashed var(--line);border-radius:14px;padding:18px;background:#fff}
+    @media(min-width:900px){.icon-card{grid-column:span 4}}
+    .icon-card h4{margin-top:4px}
+    .icon{width:36px;height:36px;border-radius:10px;background:#eff6ff;display:grid;place-items:center;font-weight:800;color:#2563eb}
+
+    /* How it works */
+    .steps{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+    .step{grid-column:span 12;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+    @media(min-width:900px){.step{grid-column:span 4}}
+
+    /* Testimonials */
+    .testimonial{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+    .stars{color:#f59e0b}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+    .g1{grid-column:span 12;height:240px}
+    .g2,.g3,.g4{grid-column:span 12;height:200px}
+    @media(min-width:900px){
+      .g1{grid-column:span 6;height:340px}
+      .g2{grid-column:span 3;height:340px}
+      .g3{grid-column:span 3;height:160px}
+      .g4{grid-column:span 3;height:160px}
     }
 
-    body {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    body.light {
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-    }
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-    }
+    /* Service Area Banner */
+    .service-area{background:linear-gradient(90deg,#f8fafc,#eff6ff);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .service-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;padding:14px 0;color:#0b1324}
 
-    header {
-      background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      padding: 100px 20px;
-      color: white;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    }
+    /* Footer */
+    footer{padding:36px 0;border-top:1px solid var(--line);background:#fff}
+    .foot-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+    .foot-col{grid-column:span 12}
+    @media(min-width:800px){.foot-col{grid-column:span 4}}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.25rem;
-      opacity: 0.85;
-    }
-
-    h2 {
-      text-align: center;
-      margin: 50px 0 30px;
-      font-size: 2rem;
-      color: var(--accent);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 0 20px 50px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: var(--card-bg-dark);
-      backdrop-filter: blur(8px);
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid var(--border-color-dark);
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-    }
-
-    .card svg {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 15px;
-      fill: var(--accent);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover svg {
-      transform: scale(1.2);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-      color: var(--accent);
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    /* New pricing-specific styles */
-    .pricing .card h3,
-    .pricing .card p.price {
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
-
-    .testimonials .card p {
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    .testimonials .card strong {
-      display: block;
-      margin-top: 15px;
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      font-size: 1.25rem;
-      user-select: none;
-    }
+    /* Floating quick actions */
+    .quickbar{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:60}
   </style>
 </head>
-<body class="dark">
-  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-  <header>
-    <h1>SplashBros Car Wash</h1>
-    <p>Clean. Fast. Affordable. Drive away shining today!</p>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">
+        <div class="logo">SB</div>
+        <span>SplashBros Car Wash</span>
+      </div>
+      <nav>
+        <a href="#packages">Pricing</a>
+        <a href="#compare">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta-row">
+        <a class="btn" href="tel:+1-555-555-5555">Call</a>
+        <a class="btn btn-primary" href="#book">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header id="book" class="hero" role="banner">
+    <div class="container hero-wrap">
+      <div>
+        <h1>Mobile Detailing that Comes to You</h1>
+        <p>Hand wash, interior deep clean, and paint protection—done in your driveway. Transparent pricing, friendly techs, and a like‑new finish.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://splashbroscarwash.github.io/carwashwebsite/">Book Online</a>
+          <a class="btn" href="sms:+15555555555?body=Hi%20SplashBros!%20Can%20I%20get%20a%20quote%3F">Text for Quote</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Since 2024</span>
+          <span class="badge">5‑Star Service</span>
+          <span class="badge">We bring water & power*</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" media="(min-width: 900px)">
+          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+               alt="Technician hand-washing a car with foam"
+               width="1200" height="800"
+               loading="eager" decoding="async" referrerpolicy="no-referrer" crossorigin="anonymous"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1592853625603-7f3b71f5cf9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';"/>
+        </picture>
+      </div>
+    </div>
   </header>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 11h14l-1.5-4.5h-11L5 11zm14.92 1.39A1 1 0 0 1 21 13v1a1 1 0 0 1-1 1h-.17a3 3 0 0 1-5.66 0H9.83a3 3 0 0 1-5.66 0H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 .08-.39l2-5A1 1 0 0 1 6 6h12a1 1 0 0 1 .92.61l2 5zM7 17a1 1 0 1 0 1-1 1 1 0 0 0-1 1zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg>
-        <h3>Basic Wash</h3>
-        <p>Exterior hand wash and dry. Quick and effective cleaning for those on the go.</p>
+  <!-- Service area stripe -->
+  <div class="service-area">
+    <div class="container service-row">
+      <strong>Serving:</strong> San Jose • Santa Clara • Campbell • Los Gatos • Saratoga • Cupertino
+    </div>
+  </div>
+
+  <!-- Pricing / Packages -->
+  <section id="packages">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Services & Pricing</span>
+        <h2>Choose a Package</h2>
+        <p>We’ll confirm your time and roll up—home or office.</p>
       </div>
-      <div class="card">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 11h14l-1.5-4.5h-11L5 11zm14.92 1.39A1 1 0 0 1 21 13v1a1 1 0 0 1-1 1h-.17a3 3 0 0 1-5.66 0H9.83a3 3 0 0 1-5.66 0H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 .08-.39l2-5A1 1 0 0 1 6 6h12a1 1 0 0 1 .92.61l2 5zM7 17a1 1 0 1 0 1-1 1 1 0 0 0-1 1zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg>
-        <h3>Deluxe Wash</h3>
-        <p>Includes interior vacuuming, window cleaning, and exterior wash with wax finish.</p>
+
+      <div class="grid">
+        <!-- Basic Wash -->
+        <div class="card md-4 sm-6">
+          <div class="pkg">
+            <h3>Basic Wash <span class="tag">Value</span></h3>
+            <div class="price">$15</div>
+            <ul class="includes">
+              <li><span class="check">✓</span> Exterior hand wash & rinse</li>
+              <li><span class="check">✓</span> Gentle foam pre-soak (pH-balanced)</li>
+              <li><span class="check">✓</span> Wheels & tires cleaned</li>
+              <li><span class="check">✓</span> Hand dry with microfiber</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://splashbroscarwash.github.io/carwashwebsite/">Book</a>
+              <a class="btn" href="sms:+15555555555?body=Quote%20for%20Basic%20Wash">Text Quote</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Deluxe Wash -->
+        <div class="card md-4 sm-6">
+          <div class="pkg">
+            <h3>Deluxe Wash <span class="tag green">Most Popular</span></h3>
+            <div class="price">$30</div>
+            <ul class="includes">
+              <li><span class="check">✓</span> Everything in Basic</li>
+              <li><span class="check">✓</span> Interior vacuum (seats, floors, trunk)</li>
+              <li><span class="check">✓</span> Windows cleaned (inside & out)</li>
+              <li><span class="check">✓</span> Spray wax finish + tire shine</li>
+              <li><span class="check">✓</span> Dash/console quick wipe & dust</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://splashbroscarwash.github.io/carwashwebsite/">Book</a>
+              <a class="btn" href="sms:+15555555555?body=Quote%20for%20Deluxe%20Wash">Text Quote</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ultimate Detail -->
+        <div class="card md-4 sm-6">
+          <div class="pkg">
+            <h3>Ultimate Detail <span class="tag gold">VIP</span></h3>
+            <div class="price">$75</div>
+            <ul class="includes">
+              <li><span class="check">✓</span> Everything in Deluxe</li>
+              <li><span class="check">✓</span> Clay-bar decontamination (light)</li>
+              <li><span class="check">✓</span> Single-stage polish for gloss</li>
+              <li><span class="check">✓</span> Deep clean & condition (plastic/leather)</li>
+              <li><span class="check">✓</span> Floor mats shampoo & spot treatment</li>
+              <li><span class="check">✓</span> Trim dressing • Crystal-clear glass</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://splashbroscarwash.github.io/carwashwebsite/">Book</a>
+              <a class="btn" href="sms:+15555555555?body=Quote%20for%20Ultimate%20Detail">Text Quote</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 11h14l-1.5-4.5h-11L5 11zm14.92 1.39A1 1 0 0 1 21 13v1a1 1 0 0 1-1 1h-.17a3 3 0 0 1-5.66 0H9.83a3 3 0 0 1-5.66 0H4a1 1 0 0 1-1-1v-1a1 1 0 0 1 .08-.39l2-5A1 1 0 0 1 6 6h12a1 1 0 0 1 .92.61l2 5zM7 17a1 1 0 1 0 1-1 1 1 0 0 0-1 1zm10 0a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg>
-        <h3>Ultimate Detail</h3>
-        <p>Complete detail service including polish, tire shine, and deep interior conditioning.</p>
+      <p style="opacity:.75;margin-top:10px;font-size:14px">Add‑ons available: pet hair removal, heavy soil cleanup, engine bay wipe‑down. SUVs/3rd rows priced on site. We service driveways & offices—need access to water & power.</p>
+    </div>
+  </section>
+
+  <!-- Compare -->
+  <section id="compare">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why We Win</span>
+        <h2>Car Wash vs SplashBros Hand Wash</h2>
+        <p>We beat tunnel washes on quality, convenience, and care.</p>
+      </div>
+      <div class="card compare">
+        <table aria-label="Comparison table">
+          <thead><tr><th>Feature</th><th>Tunnel Wash</th><th>Our Hand Wash</th></tr></thead>
+          <tbody>
+            <tr><td>Water Use</td><td class="no">Up to ~50 gal</td><td class="yes">~5 gal</td></tr>
+            <tr><td>Convenience</td><td class="no">Drive & wait</td><td class="yes">We come to you</td></tr>
+            <tr><td>Quality</td><td class="no">Swirls, average clean</td><td class="yes">Showroom finish</td></tr>
+            <tr><td>Interior</td><td class="no">Usually none</td><td class="yes">Complete interior + shampoo</td></tr>
+            <tr><td>Products</td><td class="no">Bulk chemicals</td><td class="yes">Pro‑grade, safe on finishes</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <section class="pricing">
-    <h2>Pricing</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Basic Wash</h3>
-        <p class="price">$15</p>
-        <p>Exterior hand wash and dry.</p>
+  <!-- Why choose us icons -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Peace of Mind</span>
+        <h2>Why Choose SplashBros</h2>
+        <p>Professional detailers, transparent pricing, and a friendly walkthrough every time.</p>
       </div>
-      <div class="card">
-        <h3>Deluxe Wash</h3>
-        <p class="price">$30</p>
-        <p>Includes interior vacuuming, window cleaning, and exterior wax finish.</p>
-      </div>
-      <div class="card">
-        <h3>Ultimate Detail</h3>
-        <p class="price">$75</p>
-        <p>Complete detail package with polish, tire shine, and deep conditioning.</p>
+      <div class="icons">
+        <div class="icon-card"><div class="icon">★</div><h4>5‑Star Experience</h4><p class="muted">We show up on time and leave your ride glowing.</p></div>
+        <div class="icon-card"><div class="icon">✓</div><h4>Safe for Finishes</h4><p>pH‑balanced soaps and plush mitts—no swirls.</p></div>
+        <div class="icon-card"><div class="icon">🚐</div><h4>We Come to You</h4><p>Driveway, office, or curb—simple and convenient.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="cards">
-      <div class="card">
-        <p>\"My car has never looked better. Super fast and friendly service! Highly recommend ShineWave.\"</p>
-        <strong>– Jake R.</strong>
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What to Expect</span>
+        <h2>Our Process</h2>
+        <p>Simple, fast, and spotless—here’s how it goes.</p>
       </div>
-      <div class="card">
-        <p>\"The detail package is amazing. The team pays attention to every little spot!\"</p>
-        <strong>– Emily K.</strong>
-      </div>
-      <div class="card">
-        <p>\"Excellent service and friendly staff. Always leave satisfied and my car shines!\"</p>
-        <strong>– Carlos M.</strong>
+      <div class="steps">
+        <div class="step"><h4>1) Book & Confirm</h4><p>Pick a package and a time. We confirm by text with ETA.</p></div>
+        <div class="step"><h4>2) We Arrive</h4><p>Tech sets up water/power and protects your driveway/trim.</p></div>
+        <div class="step"><h4>3) Detail & Walkthrough</h4><p>We work end‑to‑end, then do a quick walkaround together.</p></div>
       </div>
     </div>
   </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Results</span>
+        <h2>Recent Work</h2>
+        <p>Fresh photos from real details.</p>
+      </div>
+      <div class="gallery">
+        <img class="g1" src="https://images.unsplash.com/photo-1592853625603-7f3b71f5cf9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Foam cannon on a black car" width="1600" height="900" loading="lazy" decoding="async" referrerpolicy="no-referrer" crossorigin="anonymous" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80';">
+        <img class="g2" src="https://images.unsplash.com/photo-1521334726092-b509a19597d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Rinsing suds off hood" width="1200" height="800" loading="lazy" decoding="async" referrerpolicy="no-referrer" crossorigin="anonymous" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+        <img class="g3" src="https://images.unsplash.com/photo-1594488506251-9b4805e0ec2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Vacuuming interior seats" width="1200" height="800" loading="lazy" decoding="async" referrerpolicy="no-referrer" crossorigin="anonymous" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+        <img class="g4" src="https://images.unsplash.com/photo-1586439702132-55cebbfc4b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Hand drying with microfiber towel" width="1200" height="800" loading="lazy" decoding="async" referrerpolicy="no-referrer" crossorigin="anonymous" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Happy Drivers</span>
+        <h2>What Customers Say</h2>
+      </div>
+      <div class="grid">
+        <div class="card md-4 sm-6 testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“My SUV looks brand new. They got stains out I thought were permanent.”</p>
+          <p style="margin-top:8px;font-weight:700">— Jake R.</p>
+        </div>
+        <div class="card md-4 sm-6 testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Best detail I’ve had. Booking was easy and they came right to my office.”</p>
+          <p style="margin-top:8px;font-weight:700">— Emily K.</p>
+        </div>
+        <div class="card md-4 sm-6 testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Fast, friendly, and thorough. The Platinum package is worth it.”</p>
+          <p style="margin-top:8px;font-weight:700">— Carlos M.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Good to Know</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="grid">
+        <div class="card sm-6">
+          <details>
+            <summary>Do you need water and electricity?</summary>
+            <p>Yes, a standard spigot and outlet within 100 ft is ideal. Let us know if you need alternatives.</p>
+          </details>
+          <details>
+            <summary>How long does a detail take?</summary>
+            <p>Refresh ~1.5–2 hr, Platinum ~2.5–3.5 hr, Diamond ~3–5 hr depending on size & condition.</p>
+          </details>
+        </div>
+        <div class="card sm-6">
+          <details>
+            <summary>What areas do you serve?</summary>
+            <p>San Jose, Santa Clara, Campbell, Los Gatos & nearby. Text to confirm your address.</p>
+          </details>
+          <details>
+            <summary>Do you handle pet hair or vomit?</summary>
+            <p>Yes, we can. There may be an extra fee for heavy soil/biohazard cleanup.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <h3>SplashBros Car Wash</h3>
+          <p>Mobile detailing • Hand wash • Interior shampoo • Paint polishing</p>
+          <p style="opacity:.8;margin-top:8px">Hours: Mon–Sat 8am–6pm</p>
+        </div>
+        <div class="foot-col">
+          <h4>Contact</h4>
+          <p><a href="tel:+1-555-555-5555">(555) 555-5555</a></p>
+          <p><a href="sms:+15555555555">Text us</a></p>
+          <p><a href="mailto:hello@splashbroscarwash.com">hello@splashbroscarwash.com</a></p>
+        </div>
+        <div class="foot-col">
+          <h4>Links</h4>
+          <p><a href="#packages">Packages</a> • <a href="#compare">Why Us</a> • <a href="#faq">FAQ</a></p>
+          <p><a href="https://splashbroscarwash.github.io/carwashwebsite/">Book Now</a></p>
+        </div>
+      </div>
+      <p style="opacity:.6;margin-top:16px;font-size:13px">© <span id="year"></span> SplashBros Car Wash. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Quick Call/Text buttons -->
+  <div class="quickbar" aria-label="quick actions">
+    <a class="btn btn-primary" href="tel:+1-555-555-5555">Call</a>
+    <a class="btn" href="sms:+15555555555?body=Hi%20SplashBros!%20Can%20I%20get%20a%20quote%3F">Text</a>
+  </div>
 
   <script>
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('light');
-      body.classList.toggle('dark');
-    }
+    (function(){document.getElementById('year').textContent=new Date().getFullYear();})();
   </script>
 </body>
 </html>
