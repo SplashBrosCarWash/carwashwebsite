@@ -6,6 +6,8 @@
   <title>SplashBros Car Wash | Mobile Detailing • Hand Wash • Interior & Exterior</title>
   <meta name="description" content="Mobile car wash & detailing. We come to you—hand wash, interior shampoo, paint polish, and ceramic protection. Clean. Fast. Affordable. Book today." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
   <style>
     :root{
       --bg:#ffffff;--text:#111827;--muted:#667085;--accent:#0ea5e9;--accent-2:#22c55e;--ink:#0b1324;
@@ -17,6 +19,7 @@
     a{color:inherit;text-decoration:none}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
+    /* Topbar like Hunters: clean, bright, clear CTAs */
     .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
     .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
     .brand{display:flex;align-items:center;gap:10px}
@@ -30,6 +33,7 @@
     .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(14,165,233,.25)}
     .btn-ghost{background:transparent;border-color:transparent;box-shadow:none}
 
+    /* Hero: light, centered, split visual */
     .hero{background:linear-gradient(180deg,#f0f9ff,#ffffff);border-bottom:1px solid var(--line)}
     .hero-wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:56px 0}
     .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.02em;color:#0b1324}
@@ -44,12 +48,14 @@
       .hero-wrap{grid-template-columns:1.1fr .9fr}
     }
 
+    /* Section heads */
     section{padding:60px 0}
     .section-head{text-align:center;margin-bottom:28px}
     .eyebrow{display:inline-block;font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;}
     .section-head h2{font-size:clamp(26px,3.6vw,36px);margin-top:6px}
     .section-head p{max-width:780px;margin:8px auto 0;color:var(--muted)}
 
+    /* Pricing grid styled like clean cards */
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
     .card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     @media(min-width:720px){.card.sm-6{grid-column:span 6}}
@@ -66,6 +72,7 @@
     .check{width:18px;height:18px;flex:0 0 18px;display:inline-grid;place-items:center;border-radius:6px;background:#e6f7ff;border:1px solid #b6e3ff;font-weight:900;color:#0369a1}
     .pkg .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 
+    /* Compare table */
     .compare{overflow:auto}
     table{width:100%;border-collapse:collapse;font-size:15px}
     th,td{padding:12px 10px;border-bottom:1px solid var(--line)}
@@ -73,19 +80,30 @@
     td .no{color:#ef4444}
     td .yes{color:#16a34a}
 
+    /* Why choose us icons */
     .icons{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
     .icon-card{grid-column:span 12;border:1px dashed var(--line);border-radius:14px;padding:18px;background:#fff}
-    @media(min-width:900px){.icon-card{grid-column:span 4}}
+    @media(min-width:900px){
+      .g1{grid-column:span 6;height:340px}
+      .g2{grid-column:span 3;height:340px}
+      .g3{grid-column:span 3;height:160px}
+      .g4{grid-column:span 3;height:160px}
+      .g5{grid-column:span 3;height:160px}
+      .g6{grid-column:span 6;height:340px}
+    }}
     .icon-card h4{margin-top:4px}
     .icon{width:36px;height:36px;border-radius:10px;background:#eff6ff;display:grid;place-items:center;font-weight:800;color:#2563eb}
 
+    /* How it works */
     .steps{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
     .step{grid-column:span 12;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
     @media(min-width:900px){.step{grid-column:span 4}}
 
+    /* Testimonials */
     .testimonial{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
     .stars{color:#f59e0b}
 
+    /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
     .gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px}
     .g1{grid-column:span 12;height:240px}
@@ -95,22 +113,34 @@
       .g2{grid-column:span 3;height:340px}
       .g3{grid-column:span 3;height:160px}
       .g4{grid-column:span 3;height:160px}
-      .g5{grid-column:span 3;height:160px}
-      .g6{grid-column:span 6;height:340px}
     }
 
+    /* Service Area Banner */
     .service-area{background:linear-gradient(90deg,#f8fafc,#eff6ff);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .service-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;padding:14px 0;color:#0b1324}
 
+    /* Footer */
     footer{padding:36px 0;border-top:1px solid var(--line);background:#fff}
     .foot-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
     .foot-col{grid-column:span 12}
     @media(min-width:800px){.foot-col{grid-column:span 4}}
 
+    /* Floating quick actions */
     .quickbar{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:60}
-  </style>
+    /* inline photos sprinkled through the page */
+  .pkg-shot{width:100%;height:170px;object-fit:cover;border-radius:12px;margin:-6px 0 12px;box-shadow:var(--shadow)}
+  .compare-wrap{display:grid;grid-template-columns:1fr;gap:22px;align-items:stretch}
+  .compare-side{border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .compare-side img{width:100%;height:100%;object-fit:cover;display:block}
+  @media(min-width:980px){.compare-wrap{grid-template-columns:1.1fr .9fr}}
+  .step-thumb{width:56px;height:56px;border-radius:12px;object-fit:cover;margin-bottom:8px;box-shadow:var(--shadow)}
+  .photo-band{background:linear-gradient(180deg,#f8fafc,#ffffff);padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .photo-band .strip{border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .photo-band img{width:100%;height:320px;object-fit:cover;display:block}
+</style>
 </head>
 <body>
+  <!-- Topbar -->
   <div class="topbar">
     <div class="topbar-inner container">
       <div class="brand">
@@ -132,33 +162,41 @@
     </div>
   </div>
 
+  <!-- Hero -->
   <header id="book" class="hero" role="banner">
     <div class="container hero-wrap">
       <div>
         <h1>Mobile Detailing that Comes to You</h1>
-        <p>Hand wash, interior deep clean, and paint protection—done in your driveway. Transparent pricing, friendly techs, and a like-new finish.</p>
+        <p>Hand wash, interior deep clean, and paint protection—done in your driveway. Transparent pricing, friendly techs, and a like‑new finish.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://splashbroscarwash.github.io/carwashwebsite/">Book Online</a>
           <a class="btn" href="sms:+15555555555?body=Hi%20SplashBros!%20Can%20I%20get%20a%20quote%3F">Text for Quote</a>
         </div>
         <div class="badges">
           <span class="badge">Since 2024</span>
-          <span class="badge">5-Star Service</span>
+          <span class="badge">5‑Star Service</span>
           <span class="badge">We bring water & power*</span>
         </div>
       </div>
       <div class="hero-media">
-        <img src="https://splashbroscarwash.github.io/carwashwebsite/img/hero.jpg" alt="Hero vehicle after detail" width="1600" height="900" loading="eager" decoding="async">
+        <picture>
+          <!-- When your images are uploaded, this will load from your GitHub Pages site -->
+          <source srcset="https://splashbroscarwash.github.io/carwashwebsite/img/hero.jpg" media="(min-width: 1px)">
+          <!-- Fallback so preview always works until the file is live -->
+          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1600&q=80" alt="Hero vehicle after detail" width="1600" height="900" loading="eager" decoding="async"/>
+        </picture>
       </div>
     </div>
   </header>
 
+  <!-- Service area stripe -->
   <div class="service-area">
     <div class="container service-row">
       <strong>Serving:</strong> San Jose • Santa Clara • Campbell • Los Gatos • Saratoga • Cupertino
     </div>
   </div>
 
+  <!-- Pricing / Packages -->
   <section id="packages">
     <div class="container">
       <div class="section-head">
@@ -168,8 +206,10 @@
       </div>
 
       <div class="grid">
+        <!-- Basic Wash -->
         <div class="card md-4 sm-6">
           <div class="pkg">
+            <img class="pkg-shot" src="https://splashbroscarwash.github.io/carwashwebsite/img/g1.jpg" alt="Exterior hand wash on a white Prius">
             <h3>Basic Wash <span class="tag">Value</span></h3>
             <div class="price">$15</div>
             <ul class="includes">
@@ -184,9 +224,11 @@
             </div>
           </div>
         </div>
-
+        
+        <!-- Deluxe Wash -->
         <div class="card md-4 sm-6">
           <div class="pkg">
+            <img class="pkg-shot" src="https://splashbroscarwash.github.io/carwashwebsite/img/g2.jpg" alt="Glossy Audi front after Deluxe wash">
             <h3>Deluxe Wash <span class="tag green">Most Popular</span></h3>
             <div class="price">$30</div>
             <ul class="includes">
@@ -202,9 +244,11 @@
             </div>
           </div>
         </div>
-
+        
+        <!-- Ultimate Detail -->
         <div class="card md-4 sm-6">
           <div class="pkg">
+            <img class="pkg-shot" src="https://splashbroscarwash.github.io/carwashwebsite/img/g5.jpg" alt="Deep gloss on SUV after Ultimate detail">
             <h3>Ultimate Detail <span class="tag gold">VIP</span></h3>
             <div class="price">$75</div>
             <ul class="includes">
@@ -222,11 +266,11 @@
           </div>
         </div>
       </div>
-
-      <p style="opacity:.75;margin-top:10px;font-size:14px">Add-ons available: pet hair removal, heavy soil cleanup, engine bay wipe-down. SUVs/3rd rows priced on site. We service driveways & offices—need access to water & power.</p>
+      <p style="opacity:.75;margin-top:10px;font-size:14px">Add‑ons available: pet hair removal, heavy soil cleanup, engine bay wipe‑down. SUVs/3rd rows priced on site. We service driveways & offices—need access to water & power.</p>
     </div>
   </section>
 
+  <!-- Compare -->
   <section id="compare">
     <div class="container">
       <div class="section-head">
@@ -234,21 +278,27 @@
         <h2>Car Wash vs SplashBros Hand Wash</h2>
         <p>We beat tunnel washes on quality, convenience, and care.</p>
       </div>
-      <div class="card compare">
-        <table aria-label="Comparison table">
-          <thead><tr><th>Feature</th><th>Tunnel Wash</th><th>Our Hand Wash</th></tr></thead>
-          <tbody>
-            <tr><td>Water Use</td><td class="no">Up to ~50 gal</td><td class="yes">~5 gal</td></tr>
-            <tr><td>Convenience</td><td class="no">Drive & wait</td><td class="yes">We come to you</td></tr>
-            <tr><td>Quality</td><td class="no">Swirls, average clean</td><td class="yes">Showroom finish</td></tr>
-            <tr><td>Interior</td><td class="no">Usually none</td><td class="yes">Complete interior + shampoo</td></tr>
-            <tr><td>Products</td><td class="no">Bulk chemicals</td><td class="yes">Pro-grade, safe on finishes</td></tr>
-          </tbody>
-        </table>
+      <div class="compare-wrap">
+        <div class="card compare">
+          <table aria-label="Comparison table">
+            <thead><tr><th>Feature</th><th>Tunnel Wash</th><th>Our Hand Wash</th></tr></thead>
+            <tbody>
+              <tr><td>Water Use</td><td class="no">Up to ~50 gal</td><td class="yes">~5 gal</td></tr>
+              <tr><td>Convenience</td><td class="no">Drive & wait</td><td class="yes">We come to you</td></tr>
+              <tr><td>Quality</td><td class="no">Swirls, average clean</td><td class="yes">Showroom finish</td></tr>
+              <tr><td>Interior</td><td class="no">Usually none</td><td class="yes">Complete interior + shampoo</td></tr>
+              <tr><td>Products</td><td class="no">Bulk chemicals</td><td class="yes">Pro-grade, safe on finishes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="compare-side">
+          <img src="https://splashbroscarwash.github.io/carwashwebsite/img/g6.jpg" alt="Close-up of polished grille and hood">
+        </aside>
       </div>
     </div>
   </section>
 
+  <!-- Why choose us icons -->
   <section id="why">
     <div class="container">
       <div class="section-head">
@@ -257,13 +307,14 @@
         <p>Professional detailers, transparent pricing, and a friendly walkthrough every time.</p>
       </div>
       <div class="icons">
-        <div class="icon-card"><div class="icon">★</div><h4>5-Star Experience</h4><p>We show up on time and leave your ride glowing.</p></div>
-        <div class="icon-card"><div class="icon">✓</div><h4>Safe for Finishes</h4><p>pH-balanced soaps and plush mitts—no swirls.</p></div>
+        <div class="icon-card"><div class="icon">★</div><h4>5‑Star Experience</h4><p class="muted">We show up on time and leave your ride glowing.</p></div>
+        <div class="icon-card"><div class="icon">✓</div><h4>Safe for Finishes</h4><p>pH‑balanced soaps and plush mitts—no swirls.</p></div>
         <div class="icon-card"><div class="icon">🚐</div><h4>We Come to You</h4><p>Driveway, office, or curb—simple and convenient.</p></div>
       </div>
     </div>
   </section>
 
+  <!-- Process -->
   <section id="process">
     <div class="container">
       <div class="section-head">
@@ -272,31 +323,29 @@
         <p>Simple, fast, and spotless—here’s how it goes.</p>
       </div>
       <div class="steps">
-        <div class="step"><h4>1) Book & Confirm</h4><p>Pick a package and a time. We confirm by text with ETA.</p></div>
-        <div class="step"><h4>2) We Arrive</h4><p>Tech sets up water/power and protects your driveway/trim.</p></div>
-        <div class="step"><h4>3) Detail & Walkthrough</h4><p>We work end-to-end, then do a quick walkaround together.</p></div>
+        <div class="step">
+          <img class="step-thumb" src="https://splashbroscarwash.github.io/carwashwebsite/img/g2.jpg" alt="Phone booking and clean hood">
+          <h4>1) Book & Confirm</h4><p>Pick a package and a time. We confirm by text with ETA.</p></div>
+        <div class="step">
+          <img class="step-thumb" src="https://splashbroscarwash.github.io/carwashwebsite/img/g1.jpg" alt="Arrival and setup by vehicle">
+          <h4>2) We Arrive</h4><p>Tech sets up water/power and protects your driveway/trim.</p></div>
+        <div class="step">
+          <img class="step-thumb" src="https://splashbroscarwash.github.io/carwashwebsite/img/g3.jpg" alt="Interior walkthrough after detail">
+          <h4>3) Detail & Walkthrough</h4><p>We work end‑to‑end, then do a quick walkaround together.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="gallery">
+  <!-- Gallery -->
+  <section class="photo-band" aria-label="Before and After">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Results</span>
-        <h2>Recent Work</h2>
-        <p>Real photos from our details.</p>
-      </div>
-      <div class="gallery">
-        <img class="g1" src="https://splashbroscarwash.github.io/carwashwebsite/img/g1.jpg" alt="White Prius mid-wash" width="1600" height="900" loading="lazy" decoding="async">
-        <img class="g2" src="https://splashbroscarwash.github.io/carwashwebsite/img/g2.jpg" alt="Clean white Audi with glossy finish" width="1200" height="800" loading="lazy" decoding="async">
-        <img class="g3" src="https://splashbroscarwash.github.io/carwashwebsite/img/g3.jpg" alt="Interior detailed seats and steering protection" width="1200" height="800" loading="lazy" decoding="async">
-        <img class="g4" src="https://splashbroscarwash.github.io/carwashwebsite/img/g4.jpg" alt="Before and after interior cleanup" width="1400" height="800" loading="lazy" decoding="async">
-        <img class="g5" src="https://splashbroscarwash.github.io/carwashwebsite/img/g5.jpg" alt="Black Cadillac SUV after detail" width="1400" height="900" loading="lazy" decoding="async">
-        <img class="g6" src="https://splashbroscarwash.github.io/carwashwebsite/img/g6.jpg" alt="Closeup of Cadillac grille and glossy hood" width="1200" height="900" loading="lazy" decoding="async">
+      <div class="strip">
+        <img src="https://splashbroscarwash.github.io/carwashwebsite/img/g4.jpg" alt="Before and after interior cleanup">
       </div>
     </div>
   </section>
 
+  <!-- Reviews -->
   <section id="reviews">
     <div class="container">
       <div class="section-head">
@@ -316,13 +365,14 @@
         </div>
         <div class="card md-4 sm-6 testimonial">
           <div class="stars">★★★★★</div>
-          <p>“Fast, friendly, and thorough. The Deluxe package is worth it.”</p>
+          <p>“Fast, friendly, and thorough. The Platinum package is worth it.”</p>
           <p style="margin-top:8px;font-weight:700">— Carlos M.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FAQ -->
   <section id="faq">
     <div class="container">
       <div class="section-head">
@@ -337,7 +387,7 @@
           </details>
           <details>
             <summary>How long does a detail take?</summary>
-            <p>Basic ~30–45 min, Deluxe ~60–90 min, Ultimate ~2–3 hr depending on size & condition.</p>
+            <p>Refresh ~1.5–2 hr, Platinum ~2.5–3.5 hr, Diamond ~3–5 hr depending on size & condition.</p>
           </details>
         </div>
         <div class="card sm-6">
@@ -354,6 +404,7 @@
     </div>
   </section>
 
+  <!-- Contact / Footer -->
   <footer id="contact">
     <div class="container">
       <div class="foot-grid">
@@ -364,7 +415,7 @@
         </div>
         <div class="foot-col">
           <h4>Contact</h4>
-          <p><a href="tel:+1-555-555-5555">(555) 555-555-5555</a></p>
+          <p><a href="tel:+1-555-555-5555">(555) 555-5555</a></p>
           <p><a href="sms:+15555555555">Text us</a></p>
           <p><a href="mailto:hello@splashbroscarwash.com">hello@splashbroscarwash.com</a></p>
         </div>
@@ -378,6 +429,7 @@
     </div>
   </footer>
 
+  <!-- Quick Call/Text buttons -->
   <div class="quickbar" aria-label="quick actions">
     <a class="btn btn-primary" href="tel:+1-555-555-5555">Call</a>
     <a class="btn" href="sms:+15555555555?body=Hi%20SplashBros!%20Can%20I%20get%20a%20quote%3F">Text</a>
